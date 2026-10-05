@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SkillSwap helps university students find free peer tutoring and skill swaps on a budget."
+    />
+    <title>SkillSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar" aria-label="Main site header">
+        <div class="brand" aria-label="SkillSwap home">
+          <span class="brand-mark">S</span>
+          <div>
+            <p class="brand-name">SkillSwap</p>
+            <p class="brand-tag">Peer tutoring, no price tag.</p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <span class="eyebrow">Free help between classes</span>
+            <h1 id="hero-title">Find the right student to help you learn.</h1>
+            <p>
+              Post a request or offer a skill, and connect with a classmate for free peer tutoring or a friendly skill swap.
+            </p>
+          </div>
+          <div class="hero-panel">
+            <div class="stat-card">
+              <strong>Free</strong>
+              <span>peer support</span>
+            </div>
+            <div class="stat-card">
+              <strong>Quick</strong>
+              <span>course match</span>
+            </div>
+            <div class="stat-card">
+              <strong>Flexible</strong>
+              <span>online or in person</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="composer card" aria-labelledby="form-heading">
+          <div class="section-heading">
+            <h2 id="form-heading">Post a request or offer</h2>
+          </div>
+
+          <form id="postForm" novalidate>
+            <div class="field-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" aria-describedby="nameError" />
+              <small class="form-error" id="nameError" aria-live="polite"></small>
+            </div>
+
+            <div class="field-group">
+              <label for="type">Post type</label>
+              <select id="type" name="type" aria-describedby="typeError">
+                <option value="">Select an option</option>
+                <option value="need-help">I need help</option>
+                <option value="can-tutor">I can tutor</option>
+              </select>
+              <small class="form-error" id="typeError" aria-live="polite"></small>
+            </div>
+
+            <div class="field-group">
+              <label for="topic">Course / topic</label>
+              <input id="topic" name="topic" type="text" placeholder="Ex: Calculus II" aria-describedby="topicError" />
+              <small class="form-error" id="topicError" aria-live="polite"></small>
+            </div>
+
+            <div class="field-group">
+              <label for="teachInReturn">Topic I can teach in return <span class="optional">optional</span></label>
+              <input
+                id="teachInReturn"
+                name="teachInReturn"
+                type="text"
+                placeholder="Ex: Python basics or Spanish conversation"
+                aria-describedby="teachInReturnError"
+              />
+              <small class="form-error" id="teachInReturnError" aria-live="polite"></small>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="format">Preferred format</label>
+                <select id="format" name="format" aria-describedby="formatError">
+                  <option value="">Select a format</option>
+                  <option value="online">Online</option>
+                  <option value="in-person">In person</option>
+                </select>
+                <small class="form-error" id="formatError" aria-live="polite"></small>
+              </div>
+
+              <div class="field-group">
+                <label for="availability">Availability</label>
+                <input
+                  id="availability"
+                  name="availability"
+                  type="text"
+                  placeholder="Wed 6-8pm, weekends"
+                  aria-describedby="availabilityError"
+                />
+                <small class="form-error" id="availabilityError" aria-live="polite"></small>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="contact">Contact</label>
+              <input
+                id="contact"
+                name="contact"
+                type="text"
+                placeholder="Email or Discord handle"
+                aria-describedby="contactError"
+              />
+              <small class="form-error" id="contactError" aria-live="polite"></small>
+            </div>
+
+            <button type="submit" class="primary-button" aria-label="Create a SkillSwap post">
+              Publish my request
+            </button>
+          </form>
+        </section>
+
+        <section class="discover" aria-labelledby="discover-heading">
+          <div class="discover-header">
+            <div>
+              <p class="eyebrow">Browse peers</p>
+              <h2 id="discover-heading">Find a helpful match</h2>
+            </div>
+            <div class="search-wrap">
+              <label class="sr-only" for="searchInput">Search by course topic</label>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search by topic or skill"
+                aria-label="Search by topic or skill"
+              />
+            </div>
+          </div>
+
+          <div class="filter-bar" aria-label="Filter posts by format and offer type">
+            <button class="filter-chip active" type="button" data-filter-group="all" data-filter-value="all" aria-pressed="true">
+              All
+            </button>
+            <button class="filter-chip" type="button" data-filter-group="format" data-filter-value="online" aria-pressed="false">
+              Online
+            </button>
+            <button class="filter-chip" type="button" data-filter-group="format" data-filter-value="in-person" aria-pressed="false">
+              In person
+            </button>
+            <button class="filter-chip" type="button" data-filter-group="offer" data-filter-value="swap" aria-pressed="false">
+              Swap
+            </button>
+            <button class="filter-chip" type="button" data-filter-group="offer" data-filter-value="free-help" aria-pressed="false">
+              Free help
+            </button>
+          </div>
+
+          <div id="postList" class="post-list" aria-live="polite"></div>
+          <div id="emptyState" class="empty-state hidden">
+            <p>No matches yet.</p>
+            <span>Try a different topic or post your own request.</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="requestModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close="modal"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button type="button" class="close-button" id="closeModal" aria-label="Close request modal">×</button>
+        <p class="eyebrow">Connection request</p>
+        <h3 id="modalTitle">Send a quick hello</h3>
+        <textarea id="requestMessage" readonly aria-label="Prepared message to send"></textarea>
+        <div class="modal-actions">
+          <button type="button" id="copyMessage" class="secondary-button">Copy message</button>
+          <a id="mailtoLink" class="primary-button inline-link" href="#" target="_blank" rel="noreferrer">
+            Email contact
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
